@@ -28,7 +28,6 @@ jobs:
       - run: echo 'Installed cuda version is ${{steps.cuda-toolkit.outputs.cuda}}'
       - run: |
               sudo apt-get update && sudo apt-get install cmake python3
-              cd ~/cvcuda
-              ci/build.sh
+              bash ci/build.sh
 
 
