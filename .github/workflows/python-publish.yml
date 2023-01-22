@@ -29,10 +29,8 @@ jobs:
       uses: actions/checkout@v3
     - name: PDM packages
       run: |
-        pwd
         ls 
-        ls ${{github.workspace}}
-        pdm build --project
+        pdm build --dest dst
     - name: Publish package
       if: github.event_name == 'push' # && startsWith(github.ref, 'refs/tags')
       uses: pypa/gh-action-pypi-publish@release/v1
