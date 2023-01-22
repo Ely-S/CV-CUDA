@@ -9,5 +9,5 @@ name = "cvcuda"
 [tool.pdm.build]
 setup-script = "ci/build.py"
 package-dir = "build-rel/lib/python/"
-includes = ["build-rel/"]
-source-includes = ["."]
+includes = ["."]
+
