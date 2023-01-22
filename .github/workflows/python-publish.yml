@@ -17,17 +17,10 @@ permissions:
 
 jobs:
   deploy:
-    name: cuda
     runs-on: ubuntu-latest
+    container: nvidia/cuda:12.0.0-devel-ubuntu22.04
     steps:
-      - name: cuda-toolkit
-        uses: Jimver/cuda-toolkit@v0.2.8
-        id: cuda-toolkit
-        with:
-          cuda: '11.7.0'
-      - run: echo 'Installed cuda version is ${{steps.cuda-toolkit.outputs.cuda}}'
-      - run: |
-              sudo apt-get update && sudo apt-get install cmake python3
-              bash ci/build.sh
-
+    - name: install update
+      run: |
+        apt-get install  libssl-dev zlib1g-dev git-lfs python3.10-dev python3-pip cmake 
 
