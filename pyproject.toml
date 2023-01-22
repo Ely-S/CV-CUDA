@@ -1,0 +1,13 @@
+[build-system]
+requires = ["pybind11", "pdm-pep517"]
+build-backend = "pdm.pep517.api"
+
+[project]
+version = "0.2.0"
+name = "cvcuda"
+
+[tool.pdm.build]
+setup-script = "ci/build.py"
+package-dir = "build-rel/lib/python/"
+includes = ["build-rel/"]
+source-includes = ["."]
