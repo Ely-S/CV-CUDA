@@ -20,7 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     container: nvidia/cuda:12.0.0-devel-ubuntu22.04
     steps:
-    - name: install update
+    - name: install packages
       run: |
-        apt-get update && apt-get install libssl-dev zlib1g-dev git-lfs python3.10-dev python3-pip cmake 
+        apt-get update && apt-get install -y libssl-dev zlib1g-dev git-lfs python3.10-dev python3-pip cmake 
+        pip install pdm
+    - name: PDM packages
+      run: |
+        pdm build
 
