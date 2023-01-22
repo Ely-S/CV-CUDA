@@ -25,12 +25,13 @@ jobs:
       run: |
         apt-get update && apt-get install -y libssl-dev zlib1g-dev git-lfs python3.10-dev python3-pip cmake 
         pip install pdm
+    - name: Checkout
+      uses: actions/checkout@v3
     - name: PDM packages
       run: |
         pwd
         ls 
-        ls ..
-        cd ${{github.workspace}}
+        ls ${{github.workspace}}
         pdm build --project
     - name: Publish package
       if: github.event_name == 'push' # && startsWith(github.ref, 'refs/tags')
