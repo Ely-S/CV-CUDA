@@ -26,5 +26,6 @@ jobs:
         pip install pdm
     - name: PDM packages
       run: |
+        echo $(pwd)
         pdm build
 
