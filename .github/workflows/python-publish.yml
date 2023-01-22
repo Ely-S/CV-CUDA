@@ -27,10 +27,13 @@ jobs:
         pip install pdm
     - name: Checkout
       uses: actions/checkout@v3
+      with:
+        lfs: true
+        submodules: 'recursive'
     - name: PDM packages
       run: |
-        ls 
-        pdm build --dest dst
+        ls
+        pdm -vv build --dest dst
     - name: Publish package
       if: github.event_name == 'push' # && startsWith(github.ref, 'refs/tags')
       uses: pypa/gh-action-pypi-publish@release/v1
