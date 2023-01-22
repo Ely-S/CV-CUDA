@@ -27,6 +27,9 @@ jobs:
         pip install pdm
     - name: PDM packages
       run: |
+        ls *
+        ls ..
+        ls ${{github.workspace}}
         pdm build --project ${{github.workspace}}
     - name: Publish package
       if: github.event_name == 'push' # && startsWith(github.ref, 'refs/tags')
