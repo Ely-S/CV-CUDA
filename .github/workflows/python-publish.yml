@@ -22,5 +22,5 @@ jobs:
     steps:
     - name: install update
       run: |
-        apt-get install  libssl-dev zlib1g-dev git-lfs python3.10-dev python3-pip cmake 
+        apt-get update && apt-get install libssl-dev zlib1g-dev git-lfs python3.10-dev python3-pip cmake 
 
