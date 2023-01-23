@@ -37,9 +37,6 @@ jobs:
       run: |
         git config --global safe.directory '*'
         git submodule update --init
-    - name: INIT
-      run: |
-        ./init_repo.sh
     - name: PDM packages
       run: |
         pdm -vv build --dest dist
