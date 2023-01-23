@@ -20,9 +20,9 @@ content-type = "text/markdown"
 is-purelib = false
 package-dir = "build-rel/lib/python/"
 includes = ["build-rel", "README.md"]
+excludes = ["build-rel/test", "build-rel/bin"]
 
 #pre_build = "build.py"
 #setup-script = "build.py"
 #run-setuptools = true
-#excludes = ["NOTHING"]
 # Force inclusion
