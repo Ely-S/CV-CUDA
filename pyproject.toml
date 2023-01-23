@@ -3,7 +3,7 @@ requires = ["pybind11", "pdm-pep517"]
 build-backend = "pdm.pep517.api"
 
 [project]
-version = "0.0.001"
+version = "0.0.011"
 name = "cvcuda-test"
 
 [tool.pdm.build]
