@@ -4,10 +4,10 @@ build-backend = "pdm.pep517.api"
 
 [project]
 version = "0.0.01"
-name = "cvcuda"
+name = "cvcuda-test"
 
 [tool.pdm.build]
+is-purelib = false
 setup-script = "ci/build.py"
 package-dir = "build-rel/lib/python/"
-includes = ["."]
-
+includes = ["*"]
