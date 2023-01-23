@@ -1,7 +1,7 @@
 import sys, os
 import subprocess
 
-def build(setuptools_kwargs):
+def build(setuptools_kwargs={}):
     print(setuptools_kwargs)
     build_dir = "build-rel"#os.path.join(".", "build-rel")
     os.makedirs(build_dir)
