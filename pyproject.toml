@@ -3,12 +3,12 @@ requires = ["pybind11", "pdm-pep517"]
 build-backend = "pdm.pep517.api"
 
 [project]
-version = "0.0.015"
+version = "0.0.016"
 name = "cvcuda-test"
 
 [tool.pdm.build]
 is-purelib = false
-setup-script = "ci.build.py"
+setup-script = "build.py"
 run-setuptools = true
 package-dir = "build-rel/lib/python/"
 includes = ["."]
