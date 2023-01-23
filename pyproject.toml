@@ -1,15 +1,25 @@
+[project]
+version = "0.0.020"
+name = "cvcuda-test"
+description = """\
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, \
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco \
+    laboris nisi ut aliquip ex ea commodo consequat.\
+"""
+
 [build-system]
 requires = ["pybind11", "pdm-pep517"]
 build-backend = "pdm.pep517.api"
 
-[project]
-version = "0.0.020"
-name = "cvcuda-test"
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
 
 [tool.pdm.build]
 is-purelib = false
 package-dir = "build-rel/lib/python/"
-includes = ["build-rel"]
+includes = ["build-rel", "README.md"]
 
 #pre_build = "build.py"
 #setup-script = "build.py"
