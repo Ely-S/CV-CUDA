@@ -17,7 +17,7 @@ file = "README.md"
 content-type = "text/markdown"
 
 [tool.pdm.build]
-package-dir = "build-rel/lib/python/"
+package-dir = "build-rel/lib"
 includes = ["build-rel/lib/", "README.md"]
 excludes = ["build-rel/test", "build-rel/bin"]
 
