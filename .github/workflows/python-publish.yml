@@ -33,6 +33,12 @@ jobs:
     - name: ls
       run: |
         ls
+    - name: PDM submodule update --init
+      run: |
+        git submodule update --init
+    - name: INIT
+      run: |
+        ./init_repo.sh
     - name: PDM packages
       run: |
         pdm -vv build --dest dist
