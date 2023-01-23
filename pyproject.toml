@@ -17,7 +17,6 @@ file = "README.md"
 content-type = "text/markdown"
 
 [tool.pdm.build]
-is-purelib = true
 package-dir = "build-rel/lib/python/"
 includes = ["build-rel/lib/", "README.md"]
 excludes = ["build-rel/test", "build-rel/bin"]
