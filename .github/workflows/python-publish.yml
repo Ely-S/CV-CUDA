@@ -30,10 +30,12 @@ jobs:
       with:
         lfs: true
         submodules: 'recursive'
-    - name: PDM packages
+    - name: ls
       run: |
         ls
-        pdm -vv build --dest dst
+    - name: PDM packages
+      run: |
+        pdm -vv build --dest dst --no-wheel
     - name: Publish package
       if: github.event_name == 'push' # && startsWith(github.ref, 'refs/tags')
       uses: pypa/gh-action-pypi-publish@release/v1
