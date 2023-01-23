@@ -1,8 +1,9 @@
 import sys, os
 import subprocess
 
-def build(src, dist):
-    build_dir = os.path.join(dist, "build-rel")
+def build(setuptools_kwargs):
+    print(setuptools_kwargs)
+    build_dir = "build-rel"#os.path.join(".", "build-rel")
     os.makedirs(build_dir)
 
     print("Initializing git submodules")
@@ -12,13 +13,13 @@ def build(src, dist):
     subprocess.check_call("git lfs fetch".split(" "))
     subprocess.check_call("git lfs checkout".split(" "))
 
-    print("Building to", src, build_dir)
+    print("Building to", build_dir)
     print("#"*10, "Please Be Patient", "#"*10)
     my_env = os.environ.copy()
 
     my_env['MAKE_OPTS'] = '-j4'
     subprocess.check_call(
-        ["./ci/build.sh", "release", os.path.join(src, "build-rel")],
+        ["./ci/build.sh", "release", os.path.join("build-rel")],
         stdout=sys.stdout,
         stderr=subprocess.STDOUT,
         env=my_env,
