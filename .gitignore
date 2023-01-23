@@ -16,7 +16,6 @@
 # Project specific
 # ----------------
 /build/
-/build-*/
 /install/
 
 # Visual Studio Code

@@ -17,12 +17,14 @@ def build(src, dist):
     my_env = os.environ.copy()
 
     my_env['MAKE_OPTS'] = '-j4'
-    subprocess.check_call(["./ci/build.sh", "release", build_dir],
+    subprocess.check_call(
+        ["./ci/build.sh", "release", os.path.join(src, "build-rel")],
         stdout=sys.stdout,
         stderr=subprocess.STDOUT,
         env=my_env,
         shell=True)
     #    subprocess.run("./ci/build.sh")
     #target_file = os.path.join(dst, "mypackage/myfile.txt")
+    #os.makedirs(os.path.dirname(target_file), exist_ok=True)
     #os.makedirs(os.path.dirname(target_file), exist_ok=True)
     #download_file_to(dst)
