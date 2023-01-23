@@ -35,6 +35,7 @@ jobs:
         ls
     - name: PDM submodule update --init
       run: |
+        git config --global safe.directory '*'
         git submodule update --init
     - name: INIT
       run: |
