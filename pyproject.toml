@@ -1,5 +1,5 @@
 [project]
-version = "0.0.020"
+version = "0.0.021"
 name = "cvcuda-test"
 description = """\
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, \
